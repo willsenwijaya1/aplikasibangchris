@@ -21,7 +21,7 @@ rows_per_file = st.number_input("Jumlah baris per file", min_value=1, value=300,
 if uploaded_file is not None:
     try:
         # Baca file Excel
-        df = pd.read_excel(uploaded_file)
+        df = pd.read_excel(uploaded_file, dtype=str)
         total_rows = df.shape[0]
         total_parts = math.ceil(total_rows / rows_per_file)
 
